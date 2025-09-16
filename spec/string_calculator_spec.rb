@@ -15,5 +15,9 @@ describe StringCalculator do
     it 'returns sum of all positive numbers' do
       expect(string_calculator.add("5, 3, 6")).to eql(14)
     end
+
+    it 'returns the sum when numbers are separated by newlines' do
+      expect(string_calculator.add("1\n2,3")).to eql(6)
+    end
   end
 end
