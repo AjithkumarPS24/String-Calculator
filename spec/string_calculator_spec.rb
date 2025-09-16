@@ -23,5 +23,10 @@ describe StringCalculator do
     it 'returns the sum when numbers are separated by different delimiters' do
       expect(string_calculator.add("//;\n1;2;3")).to eql(6)
     end
+
+    it 'raises an exception when numbers are negative' do
+      expect { string_calculator.add("1,-2,3") }
+        .to raise_error(ArgumentError, "negative numbers not allowed: -2")
+    end
   end
 end
