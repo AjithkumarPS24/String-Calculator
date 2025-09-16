@@ -19,5 +19,9 @@ describe StringCalculator do
     it 'returns the sum when numbers are separated by newlines' do
       expect(string_calculator.add("1\n2,3")).to eql(6)
     end
+
+    it 'returns the sum when numbers are separated by different delimiters' do
+      expect(string_calculator.add("//;\n1;2;3")).to eql(6)
+    end
   end
 end
